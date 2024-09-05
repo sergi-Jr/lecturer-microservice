@@ -1,0 +1,14 @@
+{
+  "Servers" : {
+    "1" : {
+      "Group" : "Servers",
+      "Name" : "postgres-lecturer",
+      "Host" : "postgres-lecturer",
+      "Port" : 5432,
+      "MaintenanceDB" : "mydb",
+      "Username" : "lecturer",
+      "PassFile" : "/pgadmin4/pgpass",
+      "SSLMode" : "prefer"
+    }
+  }
+}
