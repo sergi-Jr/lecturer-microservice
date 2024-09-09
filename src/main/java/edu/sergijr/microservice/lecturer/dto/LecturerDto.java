@@ -1,13 +1,11 @@
 package edu.sergijr.microservice.lecturer.dto;
 
-import edu.sergijr.microservice.lecturer.model.Lecturer;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.time.Instant;
-import java.util.Objects;
 import java.util.UUID;
 
 @Getter
