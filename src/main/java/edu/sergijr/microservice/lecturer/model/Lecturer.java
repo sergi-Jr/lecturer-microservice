@@ -28,7 +28,7 @@ import java.util.UUID;
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
-public class Lecturer implements Serializable {
+public class Lecturer implements Serializable, BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)

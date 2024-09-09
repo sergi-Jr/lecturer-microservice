@@ -1,10 +1,9 @@
-package edu.sergijr.microservice.lecturer.model;
+package edu.sergijr.microservice.lecturer.dto;
 
+import edu.sergijr.microservice.lecturer.model.Lecturer;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-
-import java.util.UUID;
 
 /**
  * DTO for {@link Lecturer}

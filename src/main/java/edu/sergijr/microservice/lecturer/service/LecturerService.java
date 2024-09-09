@@ -2,9 +2,10 @@ package edu.sergijr.microservice.lecturer.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.sergijr.microservice.lecturer.dto.CreateLecturerDTO;
 import edu.sergijr.microservice.lecturer.mapper.LecturerMapper;
 import edu.sergijr.microservice.lecturer.model.Lecturer;
-import edu.sergijr.microservice.lecturer.model.LecturerDto;
+import edu.sergijr.microservice.lecturer.dto.LecturerDto;
 import edu.sergijr.microservice.lecturer.repository.LecturerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -15,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -50,7 +50,7 @@ public class LecturerService {
     }
 
     @Transactional
-    public LecturerDto create(LecturerDto dto) {
+    public LecturerDto create(CreateLecturerDTO dto) {
         Lecturer lecturer = lecturerMapper.toEntity(dto);
         Lecturer resultLecturer = lecturerRepository.save(lecturer);
         return lecturerMapper.toDto(resultLecturer);

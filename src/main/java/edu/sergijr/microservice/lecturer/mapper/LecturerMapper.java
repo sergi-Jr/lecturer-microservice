@@ -1,8 +1,8 @@
 package edu.sergijr.microservice.lecturer.mapper;
 
-import edu.sergijr.microservice.lecturer.model.CreateLecturerDTO;
+import edu.sergijr.microservice.lecturer.dto.CreateLecturerDTO;
 import edu.sergijr.microservice.lecturer.model.Lecturer;
-import edu.sergijr.microservice.lecturer.model.LecturerDto;
+import edu.sergijr.microservice.lecturer.dto.LecturerDto;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
