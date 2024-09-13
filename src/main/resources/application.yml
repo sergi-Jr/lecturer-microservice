@@ -1,7 +1,8 @@
 spring:
   application:
-    name: microservice-lecturer
-  profiles:
-    default: dev
+    name: lecturer
   config:
-    import: configserver:http://localhost:7070
+    import: optional::http://configserver:7070
+  cloud:
+    config:
+      fail-fast: true

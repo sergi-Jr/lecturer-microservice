@@ -1,15 +1,14 @@
-FROM gradle:latest AS builder
-LABEL maintainer="Sergei Burashnikov <burashnikov.sergei@gmail.com>"
+FROM eclipse-temurin:21.0.2_13-jdk-alpine AS builder
 WORKDIR /application
 COPY . .
-RUN --mount=type=cache,target=/root/.gradle  gradle clean build -x test
+RUN --mount=type=cache,target=/root/.gradle  chmod +x gradlew && ./gradlew clean build -x test
 
-FROM bellsoft/liberica-openjre-alpine:21 AS layers
+FROM eclipse-temurin:21.0.2_13-jre-alpine AS layers
 WORKDIR /application
 COPY --from=builder /application/build/libs/*.jar app.jar
 RUN java -Djarmode=layertools -jar app.jar extract
 
-FROM bellsoft/liberica-openjre-alpine:21
+FROM eclipse-temurin:21.0.2_13-jre-alpine
 VOLUME /tmp
 COPY --from=layers /application/dependencies/ ./
 COPY --from=layers /application/spring-boot-loader/ ./
